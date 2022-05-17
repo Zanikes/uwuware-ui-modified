@@ -2394,7 +2394,7 @@ function library:AddWarning(warning)
 					Parent = warning.main
 				})
 
-				--[[library:Create("ImageLabel", {
+				library:Create("ImageLabel", {
 					ZIndex = 2,
 					Size = UDim2.new(1, 0, 1, 0),
 					BackgroundTransparency = 1,
@@ -2402,7 +2402,7 @@ function library:AddWarning(warning)
 					ImageColor3 = Color3.new(),
 					ImageTransparency = 0.8,
 					Parent = button
-				})]]
+				})
 
 				library:Create("ImageLabel", {
 					ZIndex = 2,
