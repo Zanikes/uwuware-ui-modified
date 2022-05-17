@@ -2404,7 +2404,7 @@ function library:AddWarning(warning)
 					Parent = button
 				})
 
-				library:Create("ImageLabel", {
+				--[[library:Create("ImageLabel", {
 					ZIndex = 2,
 					AnchorPoint = Vector2.new(0.5, 0.5),
 					Position = UDim2.new(0.5, 0, 0.5, 0),
@@ -2413,7 +2413,7 @@ function library:AddWarning(warning)
 					Image = "rbxassetid://3570695787",
 					ImageColor3 = Color3.fromRGB(50, 50, 50),
 					Parent = button
-				})
+				})]]
 
 				button.InputBegan:connect(function(input)
 					if input.UserInputType.Name == "MouseButton1" then
