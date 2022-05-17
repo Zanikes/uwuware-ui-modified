@@ -2649,3 +2649,5 @@ function library:Init()
 		delay(1, function() self:Close() end)
 	end
 end
+
+return library
