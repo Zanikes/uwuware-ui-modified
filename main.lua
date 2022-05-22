@@ -2653,6 +2653,7 @@ function library:Init()
 	if not getgenv().silent then
 		delay(1, function() self:Close() end)
 	end
+	getgenv().hasInitFull = true
 end
 
 return library
