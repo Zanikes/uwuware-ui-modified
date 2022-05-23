@@ -795,6 +795,9 @@ library.createSlider = function(option, parent)
 		if typeof(value) ~= "number" then value = 0 end
 		value = library.round(value, option.float)
 		value = math.clamp(value, self.min, self.max)
+		if option.subs > 0 then
+			value = tonumber(string.sub(tostring(value), 1, option.subs))	
+		end
 		if self.min >= 0 then
 			option.fill:TweenSize(UDim2.new((value - self.min) / (self.max - self.min), 0, 1, 0), "Out", "Quad", 0.05, true)
 		else
@@ -1931,6 +1934,7 @@ function library:AddTab(title, pos)
 				option.subcount = 0
 				option.canInit = (option.canInit ~= nil and option.canInit) or true
 				option.tip = option.tip and tostring(option.tip)
+				option.subs = typeof(option.subs) == "number" and option.subs or 0
 				library.flags[option.flag] = option.value
 				table.insert(self.options, option)
 				library.options[option.flag] = option
