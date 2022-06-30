@@ -15,7 +15,7 @@ if getgenv().library then
 	getgenv().library:Unload()
 end
 
-local library = {design = getgenv().design == "Main" and "Main" or "Yanex", tabs = {}, draggable = true, flags = {}, title = "Yanex V.2", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "YanexConfigs", fileext = ".json"}
+local library = {design = getgenv().design == "Main" and "Main" or "Yanex", tabs = {}, draggable = true, flags = {}, title = "Yanex V.2", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "Yanex V.2/YanexConfigs", fileext = ".json"}
 getgenv().library = library
 
 local dragging, dragInput, dragStart, startPos, dragObject
