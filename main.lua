@@ -2283,7 +2283,7 @@ function library:AddWarning(warning)
 			warning.main = library:Create("TextButton", {
 				ZIndex = 2,
 				Size = UDim2.new(1, 0, 1, 0),
-				BackgroundTransparency = 0.6,
+				BackgroundTransparency = 0.3,
 				BackgroundColor3 = Color3.new(),
 				BorderSizePixel = 0,
 				Text = "",
