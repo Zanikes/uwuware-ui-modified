@@ -2537,7 +2537,8 @@ function library:Init()
 		Font = Enum.Font.Code,
 		TextColor3 = Color3.new(1, 1, 1),
 		Visible = true,
-		Parent = self.base
+		Parent = self.base,
+		Position = UDim2.new(2)
 	})
 
 	self:Create("Frame", {
