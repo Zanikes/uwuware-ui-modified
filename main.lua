@@ -2658,7 +2658,14 @@ function library:Init()
 	end)
 
 	if not getgenv().silent then
-		delay(1, function() self:Close() end)
+		delay(1, function()
+			self:Close()
+			for _, v in pairs(library.options) do
+				if v.type == 'slider' then
+					v:SetValue(v.value, true)
+				end
+			end
+		end)
 	end
 end
 
