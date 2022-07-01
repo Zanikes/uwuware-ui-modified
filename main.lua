@@ -2193,7 +2193,7 @@ function library:AddTab(title, pos)
 				BackgroundTransparency = 1,
 				BorderSizePixel = 0,
 				ScrollBarImageColor3 = Color3.fromRGB(),
-				ScrollBarThickness = 4,	
+				ScrollBarThickness = 0,	
 				VerticalScrollBarInset = Enum.ScrollBarInset.ScrollBar,
 				ScrollingDirection = Enum.ScrollingDirection.Y,
 				Visible = false,
