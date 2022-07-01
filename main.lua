@@ -2662,7 +2662,7 @@ function library:Init()
 			self:Close()
 			for _, v in pairs(library.options) do
 				if v.type == 'slider' then
-					v:SetValue(v.default or 0, true)
+					v:SetValue(v.default or 0)
 				end
 			end
 		end)
