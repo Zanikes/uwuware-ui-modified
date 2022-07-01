@@ -813,7 +813,7 @@ library.createSlider = function(option, parent)
 	end
 	delay(1, function()
 		if library then
-			option:SetValue(option.value)
+			option:SetValue(option.default)
 		end
 	end)
 	
@@ -2658,14 +2658,7 @@ function library:Init()
 	end)
 
 	if not getgenv().silent then
-		delay(1, function()
-			self:Close()
-			for _, v in pairs(library.options) do
-				if v.type == 'slider' then
-					v:SetValue(v.default or 0)
-				end
-			end
-		end)
+		delay(1, function() self:Close() end)
 	end
 end
 
