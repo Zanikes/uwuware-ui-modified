@@ -816,6 +816,8 @@ library.createSlider = function(option, parent)
 			option:SetValue(option.value)
 		end
 	end)
+	
+	return option
 end
 
 library.createList = function(option, parent)
