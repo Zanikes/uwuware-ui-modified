@@ -1074,6 +1074,7 @@ library.createList = function(option, parent)
 
 		label.InputBegan:connect(function(input)
 			if input.UserInputType.Name == "MouseButton1" then
+				warn('Input Began on ' .. self.value)
 				if self.multiselect then
 					self.value[value] = not self.value[value]
 					self:SetValue(self.value)
