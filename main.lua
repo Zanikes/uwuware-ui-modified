@@ -1278,14 +1278,16 @@ library.createBox = function(option, parent)
 		end
 	end)
 
-	function option:SetValue(value, enter)
+	function option:SetValue(value, enter, nocallback)
 		if tostring(value) == "" then
 			inputvalue.Text = self.value
 		else
 			library.flags[self.flag] = tostring(value)
 			self.value = tostring(value)
 			inputvalue.Text = self.value
-			self.callback(value, enter)
+			if not nocallback then
+				self.callback(value, enter)
+			end
 		end
 	end
 	delay(1, function()
