@@ -1931,7 +1931,7 @@ function library:AddTab(title, pos)
 				option.callback = typeof(option.callback) == "function" and option.callback or function() end
 				option.float = typeof(option.value) == "number" and option.float or 1
 				option.suffix = option.suffix and tostring(option.suffix) or ""
-				option.textpos = option.textpos == 2
+				option.textpos = true
 				option.type = "slider"
 				option.position = #self.options
 				option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
