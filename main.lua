@@ -1094,6 +1094,7 @@ library.createList = function(option, parent)
 	end
 
 	function option:RemoveValue(value)
+		warn('RemoveValue was called for ' .. value)
 		local label = self.labels[value]
 		if label then
 			label:Destroy()
