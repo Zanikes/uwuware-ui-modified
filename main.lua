@@ -1100,7 +1100,9 @@ library.createList = function(option, parent)
 				self:SetValue(self.value)
 			else
 				warn('[' .. self.flag .. '] Removing ' .. value .. ' from spot ' .. tostring(table.find(self.values, value)))
-				print('    ' .. tostring(table.find(self.values, value)) .. ' == ' .. self.values[table.find(self.values, value)])
+				for i, v in pairs(self.values) do
+					print('    ' .. tostring(i) .. v)
+				end
 				table.remove(self.values, table.find(self.values, value))
 				if self.value == value then
 					selected = nil
