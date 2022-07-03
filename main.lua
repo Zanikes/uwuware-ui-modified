@@ -1099,23 +1099,12 @@ library.createList = function(option, parent)
 				self.values[value] = nil
 				self:SetValue(self.value)
 			else
-				warn('[' .. self.flag .. '] Removing ' .. value .. ' from spot ' .. tostring(table.find(self.values, value)))
-				for i, v in pairs(self.values) do
-					print('    ' .. tostring(i) .. ' == ' .. v)
-				end
-				if not table.find(self.values, value) then
-					print('Return')
-					return
-				end
-				print('')
-				table.remove(self.values, table.find(self.values, value))
-				for i, v in pairs(self.values) do
-					print('    ' .. tostring(i) .. ' == ' .. v)
-				end
 				if self.value == value then
 					selected = nil
 					self:SetValue(self.values[1] or "")
 				end
+				if not table.find(self.values, value) then return end
+				table.remove(self.values, table.find(self.values, value))
 			end
 		end
 	end
