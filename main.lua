@@ -1103,6 +1103,10 @@ library.createList = function(option, parent)
 				for i, v in pairs(self.values) do
 					print('    ' .. tostring(i) .. ' == ' .. v)
 				end
+				if not table.find(self.values, value) then
+					print('Return')
+					return
+				end
 				print('')
 				table.remove(self.values, table.find(self.values, value))
 				for i, v in pairs(self.values) do
