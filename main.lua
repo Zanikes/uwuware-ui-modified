@@ -1099,6 +1099,8 @@ library.createList = function(option, parent)
 				self.values[value] = nil
 				self:SetValue(self.value)
 			else
+				warn('Removing ' .. value .. ' from spot ' .. tostring(table.find(self.values, value)))
+				print('    ' .. tostring(table.find(self.values, value)) .. ' == ' .. self.values[table.find(self.values, value)])
 				table.remove(self.values, table.find(self.values, value))
 				if self.value == value then
 					selected = nil
