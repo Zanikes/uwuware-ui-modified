@@ -1074,10 +1074,6 @@ library.createList = function(option, parent)
 
 		label.InputBegan:connect(function(input)
 			if input.UserInputType.Name == "MouseButton1" then
-				warn('Input Began on ' .. value)
-				for _, v in pairs(self.values) do
-					print('    ' .. v)
-				end
 				if self.multiselect then
 					self.value[value] = not self.value[value]
 					self:SetValue(self.value)
@@ -1094,7 +1090,6 @@ library.createList = function(option, parent)
 	end
 
 	function option:RemoveValue(value)
-		warn('RemoveValue was called for ' .. value)
 		local label = self.labels[value]
 		if label then
 			label:Destroy()
