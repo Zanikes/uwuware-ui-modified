@@ -1101,7 +1101,7 @@ library.createList = function(option, parent)
 			else
 				warn('[' .. self.flag .. '] Removing ' .. value .. ' from spot ' .. tostring(table.find(self.values, value)))
 				for i, v in pairs(self.values) do
-					print('    ' .. tostring(i) .. v)
+					print('    ' .. tostring(i) .. ' == ' .. v)
 				end
 				table.remove(self.values, table.find(self.values, value))
 				if self.value == value then
