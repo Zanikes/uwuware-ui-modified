@@ -1829,7 +1829,7 @@ function library:AddTab(title, pos)
 				function option:AddBind(subOption)
 					subOption = typeof(subOption) == "table" and subOption or {}
 					subOption.sub = true
-					subOption.subpos = self.subcount * 24
+					subOption.subpos = 0
 					function subOption:getMain() return option.main end
 					self.subcount = self.subcount + 1
 					return section:AddBind(subOption)
