@@ -1103,7 +1103,11 @@ library.createList = function(option, parent)
 				for i, v in pairs(self.values) do
 					print('    ' .. tostring(i) .. ' == ' .. v)
 				end
+				print('')
 				table.remove(self.values, table.find(self.values, value))
+				for i, v in pairs(self.values) do
+					print('    ' .. tostring(i) .. ' == ' .. v)
+				end
 				if self.value == value then
 					selected = nil
 					self:SetValue(self.values[1] or "")
