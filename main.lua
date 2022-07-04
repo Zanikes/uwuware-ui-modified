@@ -495,12 +495,8 @@ library.createButton = function(option, parent)
 	})
 	
 	local newsize = option.title.TextBounds.Y + 5
-	
 	option.title.Size = UDim2.new(1, -12, 0, newsize)
 	option.main.Size = UDim2.new(1, 0, 0, newsize + 8)
-	
-	local add = newsize > 20 and ' -bigger' or ''
-	print(newsize)
 
 	option.title.InputBegan:connect(function(input)
 		if input.UserInputType.Name == "MouseButton1" then
