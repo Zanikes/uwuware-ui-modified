@@ -83,7 +83,7 @@ function library:Unload()
 	end
 	for _, o in next, self.options do
 		if o.type == "toggle" then
-			coroutine.resume(coroutine.create(o.SetState, o.original))
+			coroutine.resume(coroutine.create(o.SetState, false))
 		end
 	end
 	library = nil
@@ -1805,7 +1805,6 @@ function library:AddTab(title, pos)
 				option.section = self
 				option.text = tostring(option.text)
 				option.state = option.state == nil and nil or (typeof(option.state) == "boolean" and option.state or false)
-				option.original = option.state
 				option.callback = typeof(option.callback) == "function" and option.callback or function() end
 				option.type = "toggle"
 				option.position = #self.options
