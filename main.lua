@@ -86,8 +86,9 @@ function library:Unload()
 			i.object:Destroy()
 		end
 	end
-	--library = nil
-	--getgenv().library = nil
+	wait()
+	library = nil
+	getgenv().library = nil
 end
 
 function library:LoadConfig(config)
