@@ -76,7 +76,7 @@ function library:Unload()
 			o:SetState(false)
 		end
 	end
-	for _, c in next, self.connections do
+	--[[for _, c in next, self.connections do
 		c:Disconnect()
 	end
 	for _, i in next, self.instances do
@@ -87,7 +87,7 @@ function library:Unload()
 		end
 	end
 	library = nil
-	getgenv().library = nil
+	getgenv().library = nil]]
 end
 
 function library:LoadConfig(config)
