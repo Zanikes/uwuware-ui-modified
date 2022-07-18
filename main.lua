@@ -79,15 +79,15 @@ function library:Unload()
 	for _, c in next, self.connections do
 		c:Disconnect()
 	end
-	--[[for _, i in next, self.instances do
+	for _, i in next, self.instances do
 		if i.method then
 			pcall(function() i.object:Remove() end)
 		else
 			i.object:Destroy()
 		end
 	end
-	library = nil
-	getgenv().library = nil]]
+	--library = nil
+	--getgenv().library = nil
 end
 
 function library:LoadConfig(config)
