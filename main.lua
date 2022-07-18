@@ -71,6 +71,11 @@ function library:AddConnection(connection, name, callback)
 end
 
 function library:Unload()
+	for _, o in next, self.options do
+		if o.type == "toggle" then
+			o:SetState(false)
+		end
+	end
 	for _, c in next, self.connections do
 		c:Disconnect()
 	end
@@ -79,11 +84,6 @@ function library:Unload()
 			pcall(function() i.object:Remove() end)
 		else
 			i.object:Destroy()
-		end
-	end
-	for _, o in next, self.options do
-		if o.type == "toggle" then
-			coroutine.resume(coroutine.create(o.SetState, false))
 		end
 	end
 	library = nil
