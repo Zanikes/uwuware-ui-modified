@@ -72,14 +72,14 @@ end
 
 function library:Unload()
 	for _, o in next, self.options do
-		if o.type == "toggle" then
+		if o.type == "toggle" and o.state == true then
 			o:SetState(false)
 		end
 	end
-	--[[for _, c in next, self.connections do
+	for _, c in next, self.connections do
 		c:Disconnect()
 	end
-	for _, i in next, self.instances do
+	--[[for _, i in next, self.instances do
 		if i.method then
 			pcall(function() i.object:Remove() end)
 		else
