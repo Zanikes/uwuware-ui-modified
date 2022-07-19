@@ -1102,6 +1102,7 @@ library.createList = function(option, parent)
 			valueCount = valueCount - 1
 			if self.multiselect then
 				self.values[value] = nil
+				self.value[value] = nil
 				self:SetValue(self.value)
 			else
 				if self.value == value then
